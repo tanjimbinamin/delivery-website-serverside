@@ -89,6 +89,7 @@ client.connect(err => {
     // get all services
 
     app.get("/allServices",async(req,res)=>{
+        console.log(req.body)
         const result =await serviceCollection.find({}).toArray()
         res.send(result)
     })
