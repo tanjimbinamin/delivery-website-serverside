@@ -31,6 +31,7 @@ client.connect(err => {
         console.log(req.body)
         const result=await usersCollection.insertOne(req.body)
         console.log(result)
+        res.send(result)
     })
 
     // get my orders
@@ -49,6 +50,7 @@ client.connect(err => {
         console.log(req.body);
         const result=await serviceCollection.insertOne(req.body)
         console.log(result);
+        res.send(result)
     });
     
 
@@ -82,6 +84,7 @@ client.connect(err => {
 
     // get all user
     app.get("/allOrders",async(req,res)=>{
+        console.log(req.body)
         const result= await usersCollection.find({}).toArray();
         res.send(result)
         console.log(result)
@@ -97,7 +100,6 @@ client.connect(err => {
     // client.close();
 
 });
-
 
 app.listen(port,()=>{
     console.log('hello',port)
