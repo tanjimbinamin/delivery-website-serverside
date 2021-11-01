@@ -51,13 +51,6 @@ client.connect(err => {
         console.log(result);
     });
     
-    // get data
-    app.get("/services", async (req,res)=>{
-        console.log(req.body);
-        const result =await serviceCollection.find({}).toArray()
-        
-        res.send(result)
-    })
 
     // get single item
     app.get("/services/:id",async (req, res) => {
