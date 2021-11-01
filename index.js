@@ -80,13 +80,11 @@ client.connect(err => {
         res.send(result)
     })
 
-
-
-
     // get all user
     app.get("/allOrders",async(req,res)=>{
         const result= await usersCollection.find({}).toArray();
         res.send(result)
+        console.log(result)
     })
     // get all services
 
